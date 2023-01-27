@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/weight_enter"
+        style="@style/Widget.BMICalculator.CompoundButton.Switch."
+        android:layout_margin="15dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/weight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/weight_enter_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/height_Label"
+        style="@style/Widget.BMICalculator.CompoundButton.Switch."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/weight_enter"
+        android:text="@string/please_enter_your_weight2"
+        app:layout_constraintBottom_toBottomOf="@id/weight_enter"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Height_Feet_Enter"
+
+        style="@style/Widget.BMICalculator.CompoundButton.Switch."
+        android:layout_margin="15dp"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:hint="ft"
+        app:layout_constraintTop_toBottomOf="@id/weight_enter"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/height_enter_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Height_Inches_Enter"
+        style="@style/Widget.BMICalculator.CompoundButton.Switch."
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:hint="in"
+        app:layout_constraintLeft_toRightOf="@id/Height_Feet_Enter"
+        app:layout_constraintTop_toBottomOf="@id/weight_enter">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/height_inches_enter_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/Height_Label"
+        style="@style/Widget.BMICalculator.CompoundButton.Switch."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/please_enter_your_height"
+        app:layout_constraintBottom_toBottomOf="@id/Height_Feet_Enter"
+        app:layout_constraintStart_toEndOf="@id/Height_Inches_Enter" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/Calculate_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="@string/calculate"
+        app:layout_constraintTop_toBottomOf="@id/Height_Feet_Enter">
+    </com.google.android.material.button.MaterialButton>
+
+    <TextView
+        android:id="@+id/BMI_Result"
+        style="@style/Widget.BMICalculator.TextView"
+        android:layout_width="240dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toBottomOf="@id/Calculate_Button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="BMI Number: " />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
